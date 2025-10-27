@@ -1,0 +1,52 @@
+= Spring Boot Lab
+
+== Overview
+This project is a Spring Boot application that demonstrates various features and best practices of the Spring Boot framework, including custom autoconfiguration, conditional bean loading, and actuator endpoints for monitoring and diagnostics.
+
+== Features
+* Custom notification services (Email and SMS)
+* Conditional bean loading based on configuration properties
+* Spring Boot Actuator integration for runtime insights
+
+== Getting Started
+To run the application, ensure you have Java and Maven installed. Clone the repository and run via your IDE or use the following command:
+
+[source,shell]
+----
+./mvnw spring-boot:run
+----
+== Tasks
+
+=== Autoconfiguration Tasks
+
+. Add the starter dependency for Spring Boot Actuator
+
+. Overwrite autoconfiguration and enable actuator endpoints in `application.yml`: conditions, configprops, beans, env
+
+. Run the app with logs in DEBUG mode to observe the condition report and `/actuator/conditions` endpoint:
+
+=== Notification Service Configuration
+
+. Add the SMS properties to your `NotificationProperties` configuration file
+
+. Configure conditional bean loading:
+  * The EmailNotificationService is loaded by default and when `notification.type=email`.
+  * The SmsNotificationService is loaded only if `notification.type=sms`.
+
+. Check the Rest service defined in the `DemoController`. Execute requests to this service to verify behavior.
+
+. Verify also by changing the `notification.type` property and observing loaded beans in `/actuator/conditions` and `/actuator/beans` endpoints.
+
+=== Bean lifecycle management
+
+
+== Useful Actuator Endpoints
+* `/actuator/conditions` - Shows autoconfiguration condition evaluation report
+* `/actuator/beans` - Lists all loaded beans
+* `/actuator/configprops` - Displays configuration properties
+* `/actuator/env` - Shows environment properties
+
+== References
+* https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+* https://projectlombok.org/
+
