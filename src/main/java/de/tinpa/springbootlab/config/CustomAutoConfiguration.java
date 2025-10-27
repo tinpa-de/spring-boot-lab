@@ -15,7 +15,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 public class CustomAutoConfiguration {
-
     public CustomAutoConfiguration() {
         log.info("CustomAutoConfiguration loaded");
     }
