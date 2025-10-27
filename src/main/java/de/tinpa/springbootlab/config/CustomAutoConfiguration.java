@@ -3,6 +3,8 @@ package de.tinpa.springbootlab.config;
 import de.tinpa.springbootlab.service.EmailNotificationService;
 import de.tinpa.springbootlab.service.NotificationService;
 import de.tinpa.springbootlab.service.SmsNotificationService;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,6 +19,16 @@ import org.springframework.context.annotation.Configuration;
 public class CustomAutoConfiguration {
     public CustomAutoConfiguration() {
         log.info("CustomAutoConfiguration loaded");
+    }
+
+    @PostConstruct
+    public void init() {
+        log.info("CustomAutoConfiguration initialized");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("CustomAutoConfiguration destroyed");
     }
 
     /**

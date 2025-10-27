@@ -6,7 +6,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: conditions,configprops,beans,env
+        include: conditions,configprops,beans,env,shutdown
+  endpoint:
+    shutdown:
+      access: unrestricted
 
 app:
   # Notification Configuration
