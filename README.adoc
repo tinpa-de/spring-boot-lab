@@ -40,7 +40,11 @@ To run the application, ensure you have Java and Maven installed. Clone the repo
 . Verify also by changing the `notification.type` property and observing loaded beans in `/actuator/conditions` and `/actuator/beans` endpoints.
 
 === Bean lifecycle management
+Next we want to execute actions inside the bean lifecycle.
 
+. The `CustomAutoConfiguration` should log when it is constructed and destroyed
+. Enable the shutdown endpoint
+. Verify the correct execution of the lifecycle hooks while starting and stopping the application via the shutdown endpoint `/actuator/shutdown`
 
 == Useful Actuator Endpoints
 * `/actuator/conditions` - Shows autoconfiguration condition evaluation report
