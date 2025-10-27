@@ -29,6 +29,8 @@ To run the application, ensure you have Java and Maven installed. Clone the repo
 
 . Add the SMS properties to your `NotificationProperties` configuration file
 
+. Uncomment the lines in `SmsNotificationService` to enable SMS sending simulation
+
 . Configure conditional bean loading:
   * The EmailNotificationService is loaded by default and when `notification.type=email`.
   * The SmsNotificationService is loaded only if `notification.type=sms`.
