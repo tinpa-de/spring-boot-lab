@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Spring Boot Lab
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: conditions,configprops,beans,env
+
+
+app:
+  # Notification Configuration
+  notification:
+    enabled: true
+    type: email  # Options: email, sms
+    email:
+      host: smtp.example.com
+      port: 587
+      from: lab@example.com
+    sms:
+      api-key: your-api-key-here
+      provider: twilio
