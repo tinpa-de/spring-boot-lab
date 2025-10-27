@@ -26,8 +26,19 @@ public class NotificationProperties {
         String from;
     }
 
+    @Data
+    public static final class Sms {
+        String apiKey;
+        String provider;
+    }
+
     /**
      * Email specific configuration
      */
     Email email;
+
+    /**
+     * Sms specific configuration
+     */
+    Sms sms;
 }
