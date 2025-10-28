@@ -2,14 +2,6 @@ spring:
   application:
     name: Spring Boot Lab
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: conditions,configprops,beans,env,shutdown
-  endpoint:
-    shutdown:
-      access: unrestricted
 
 app:
   # Notification Configuration
@@ -23,3 +15,10 @@ app:
     sms:
       api-key: your-api-key-here
       provider: twilio
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # BAD BAD BAD, never do this, not even in dev!
+        include: "*"
