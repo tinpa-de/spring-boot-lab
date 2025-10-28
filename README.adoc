@@ -50,15 +50,10 @@ Next we want to execute actions inside the bean lifecycle.
 You can now checkout the branch `day2` and continue with the following tasks.
 
 === Secure the rest endpoint
-. Add Spring Security dependency to the project
 . Configure authentication for the `/notify` endpoint to only allow access with the *manager* role
 .. Test if it works by accessing http://localhost:8080/notify[localhost:8080/notify] and logging in with `manager` and `password`
 . Configure all actuator endpoints to be accessible only to users with the *admin* role
 
-=== JWT
-Now basic auth is not really cool. Wouldn't it be nice if the application could use JWT tokens for authentication of requests, maybe provided by our frontend?
-
-.
 
 
 == Useful Actuator Endpoints

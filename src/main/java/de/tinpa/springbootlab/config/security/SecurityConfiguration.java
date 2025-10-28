@@ -17,16 +17,12 @@ import org.springframework.security.web.SecurityFilterChain;
 @RequiredArgsConstructor
 public class SecurityConfiguration {
 
-    // private final JwtAuthenticationFilter jwtAuthFilter;
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable()) // For testing purposes
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/actuator/**").hasAnyRole("ADMIN")
-                        .requestMatchers("/notify").hasAnyRole("MANAGER", "ADMIN")
-                        .anyRequest().permitAll() // Permit every other request
+                        .anyRequest().permitAll()
                 )
                 .httpBasic(basic -> {});
 
